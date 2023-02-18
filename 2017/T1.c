@@ -44,4 +44,5 @@ int main()
 	{
 		printf("%d,", A[i]);
 	}
+	return 0;
 }
