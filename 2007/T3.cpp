@@ -4,7 +4,7 @@
 
 //已知单链表L是一个递增有序表，试写一高效算法，删除表中值大于min且小于max的结点（若表中又这样的结点），同时释放被删结点的空间，这里的min和max是两个给定的参数。请分析你的算法时间复杂度。
 
-#include "../LinkList.h"
+#include "../LinkList.hpp"
 
 #include <stdio.h>
 #include <stdlib.h>

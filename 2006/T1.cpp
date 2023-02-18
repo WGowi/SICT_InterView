@@ -4,7 +4,7 @@
 
 //1、 编写一个程序，对输入的一行字符，分别统计出其中英文字母、空格、数字和其它字符各自的数目。
 
-#include <stdio.h>
+#include <cstdio>
 
 int main()
 {

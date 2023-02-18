@@ -4,7 +4,7 @@
 
 //有n个整数，使前面各数顺序向后移m个位置，最后m个数变成最前面的m个数，如下图所示
 
-#include <stdio.h>
+#include <cstdio>
 
 int main(void)
 {

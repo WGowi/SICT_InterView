@@ -7,8 +7,8 @@
 
 #endif //SICT_INTERVIEW_CODE_LINKLIST_H
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <cstdio>
+#include <cstdlib>
 
 struct LNode
 {
