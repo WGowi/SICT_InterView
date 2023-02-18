@@ -10,3 +10,4 @@ add_executable(2006T3 2006/T3.c)
 
 add_executable(2007T1 2007/T1.c)
 add_executable(2007T2 2007/T2.c)
+add_executable(2007T3 2007/T3.c)
