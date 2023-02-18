@@ -13,3 +13,5 @@ add_executable(2007T2 2007/T2.cpp)
 add_executable(2007T3 2007/T3.cpp)
 add_executable(2007T4 2007/T4.cpp)
 add_executable(2007T5 2007/T5.cpp)
+
+add_executable(2008T1 2008/T1.cpp)
