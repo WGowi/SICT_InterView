@@ -58,7 +58,7 @@ public:
 	{
 		if (!IsFull())
 		{
-			a[top] = x;
+			A[top++] = x;
 		}
 		else
 		{
@@ -74,7 +74,7 @@ public:
 		}
 		else
 		{
-			return A[top--];
+			return A[--top];
 		}
 	}
 

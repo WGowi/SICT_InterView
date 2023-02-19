@@ -7,6 +7,7 @@
 
 #endif //SICT_INTERVIEW_CODE_MYTREE_H
 
+#include "myStack.h"
 #include "myQueue.h"
 
 #include <cstdlib>
@@ -64,32 +65,52 @@ protected:
 		return r;
 	}
 
-	void PreOrder(BiNode<T> *r)
+	void PreOrder1(BiNode<T> *r)
 	{
 		if (r)
 		{
 			cout << r->data << ",";
-			PreOrder(r->LChild);
-			PreOrder(r->RChild);
+			PreOrder1(r->LChild);
+			PreOrder1(r->RChild);
 		}
 	}
 
-	void InOrder(BiNode<T> *r)
+	void InOrder1(BiNode<T> *r)
 	{
 		if (r)
 		{
-			InOrder(r->LChild);
+			InOrder1(r->LChild);
 			cout << r->data << ",";
-			InOrder(r->RChild);
+			InOrder1(r->RChild);
 		}
 	}
 
-	void PostOrder(BiNode<T> *r)
+	void InOrder2(BiNode<T> *r)
+	{
+		BiNode<T> *p = r;
+		Stack<BiNode<T> *> s = Stack<BiNode<T> *>(n);
+		while (!s.IsEmpty() || p != NULL)
+		{
+			if (p)
+			{
+				s.push(p);
+				p = p->LChild;
+			}
+			else
+			{
+				p = s.pop();
+				cout << p->data << ",";
+				p = p->RChild;
+			}
+		}
+	}
+
+	void PostOrder1(BiNode<T> *r)
 	{
 		if (r)
 		{
-			PostOrder(r->LChild);
-			PostOrder(r->RChild);
+			PostOrder1(r->LChild);
+			PostOrder1(r->RChild);
 			cout << r->data << ",";
 		}
 	}
@@ -121,19 +142,19 @@ public:
 		this->root = CreatBiTree_Pre_In(pre, in, l1, r1, l2, r2);
 	}
 
-	void getPreOder()
+	void getPreOrder1()
 	{
-		PreOrder(root);
+		PreOrder1(root);
 	}
 
-	void getInOrder()
+	void getInOrder1()
 	{
-		InOrder(root);
+		InOrder1(root);
 	}
 
-	void getPostOrder()
+	void getPostOrder1()
 	{
-		PostOrder(root);
+		PostOrder1(root);
 	}
 
 	void getLevelOrder()
@@ -146,6 +167,10 @@ public:
 		return root;
 	}
 
+	void getInOrder2()
+	{
+		InOrder2(root);
+	}
 };
 
 
