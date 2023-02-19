@@ -8,7 +8,6 @@
 //返回值为输入值的前一天，如：today = “2017-03-19”，返回：“2017-03-18”
 
 #include <cstdio>
-#include <cstring>
 
 char *BeforeData(char *today)
 {

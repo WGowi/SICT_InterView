@@ -24,3 +24,6 @@ add_executable(2010T1 2010/T1.cpp)
 add_executable(2010T2 2010/T2.cpp)
 add_executable(2010T3 2010/T3.cpp)
 add_executable(2010T4 2010/T4.cpp)
+
+add_executable(2018T1 2018/T1.cpp)
+add_executable(2018T2 2018/T2.cpp)

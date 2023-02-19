@@ -25,7 +25,7 @@ int main()
 {
 	Stduent std[N];
 	FILE *f;
-	f = std::fopen("stdu.txt", "w+");
+	f = std::fopen("../2008/stdu.txt", "w+");
 	if (f == NULL)
 	{
 		printf("文件创建失败!\n");
