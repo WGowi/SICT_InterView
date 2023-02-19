@@ -84,4 +84,22 @@ public:
 		return head;
 	}
 
+	void Delete_X(T x)
+	{
+		LNode<T> *p = head;
+		while (p != NULL)
+		{
+			if (p->next != NULL && p->next->data == x)
+			{
+				LNode<T> *q = p->next;
+				p->next = q->next;
+				::free(q);
+			}
+			else
+			{
+				p = p->next;
+			}
+		}
+	}
+
 };
