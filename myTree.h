@@ -75,6 +75,26 @@ protected:
 		}
 	}
 
+	void PreOrder2(BiNode<T> *r)
+	{
+		BiNode<T> *p = r;
+		Stack<BiNode<T> *> s = Stack<BiNode<T> *>(n);
+		while (p != NULL || !s.IsEmpty())
+		{
+			if (p != NULL)
+			{
+				cout << p->data << ",";
+				s.push(p);
+				p = p->LChild;
+			}
+			else
+			{
+				p = s.pop();
+				p = p->RChild;
+			}
+		}
+	}
+
 	void InOrder1(BiNode<T> *r)
 	{
 		if (r)
@@ -147,9 +167,19 @@ public:
 		PreOrder1(root);
 	}
 
+	void getPreOrder2()
+	{
+		PreOrder2(root);
+	}
+
 	void getInOrder1()
 	{
 		InOrder1(root);
+	}
+
+	void getInOrder2()
+	{
+		InOrder2(root);
 	}
 
 	void getPostOrder1()
@@ -167,10 +197,6 @@ public:
 		return root;
 	}
 
-	void getInOrder2()
-	{
-		InOrder2(root);
-	}
 };
 
 
