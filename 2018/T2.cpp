@@ -13,13 +13,14 @@ int main()
 {
 	int n = 0;
 	char str[N], ch;
-	FILE *f = fopen("../2018/data.txt", "r");
-	if (f == NULL)
+	FILE *f1 = fopen("../2018/data.txt", "r+");
+	FILE *f2 = fopen("../2018/new_data.txt", "w");
+	if (f1 == NULL || f2 == NULL)
 	{
 		printf("文件操作失败\n");
 		exit(0);
 	}
-	while ((ch = fgetc(f)) != EOF)
+	while ((ch = fgetc(f1)) != EOF)
 	{
 		if (ch != ',')
 		{
@@ -41,7 +42,7 @@ int main()
 	}
 	for (int i = 0; i < n; ++i)
 	{
-		printf("%c,", str[i]);
+		fprintf(f2, "%c,", str[i]);
 	}
 	return 0;
 }
