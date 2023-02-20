@@ -31,3 +31,4 @@ add_executable(2018T3 2018/T3.cpp)
 add_executable(2018T4 2018/T4.cpp)
 
 add_executable(2019T1 2019/T1.cpp)
+add_executable(2019T2 2019/T2.cpp)

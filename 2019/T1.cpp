@@ -71,4 +71,5 @@ int main()
 		}
 	}
 	printf("%d-%d-%d", year, month, day);
+	return 0;
 }

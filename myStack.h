@@ -51,7 +51,7 @@ public:
 
 	T getTop()
 	{
-		return A[top];
+		return A[top - 1];
 	}
 
 	void push(T x)
