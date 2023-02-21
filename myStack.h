@@ -19,9 +19,9 @@ private:
 	int MaxLen;
 	int top;
 public:
-	Stack(int len)
+	Stack(int MaxLen)
 	{
-		this->MaxLen = len;
+		this->MaxLen = MaxLen;
 		this->top = 0;
 	}
 
@@ -39,7 +39,7 @@ public:
 
 	bool IsFull()
 	{
-		if (top == MaxLen - 1)
+		if (top == MaxLen)
 		{
 			return true;
 		}

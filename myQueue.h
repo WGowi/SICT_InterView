@@ -22,7 +22,7 @@ public:
 	{
 		this->head = 0;
 		this->end = 0;
-		this->MaxLen = MaxLen;
+		this->MaxLen = MaxLen + 1;
 	}
 
 	bool IsEmpty()
@@ -39,7 +39,7 @@ public:
 
 	bool IsFull()
 	{
-		if ((end - head) == MaxLen)
+		if ((end + 1) % MaxLen == 0 && end != head)
 		{
 			return true;
 		}
