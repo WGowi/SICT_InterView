@@ -2,17 +2,28 @@
 // Created by 伍高巍 on 2023/2/19.
 //
 
+//编写程序，将字符串中第n个字符开始的全部字符复制成另一个字符串。要求在主函数中输入字符串及n的值并输出复制的结果，在被调用函数中完成复制。
 
-//请写出二叉树的中序非递归遍历的基本思想，然后写出算法，实现对二叉树的中序非递归遍历。
+#include <cstdio>
 
-#include "../myTree.h"
+#define N 100
 
-#define N 6
+void strCpy(char *str1, char *str2, int n)
+{
+	int i = n, j = 0;
+	for (; str1[i] != '\0'; i++, j++)
+	{
+		str2[j] = str1[i];
+	}
+	str2[j] = '\0';
+}
 
 int main()
 {
-	int pre[N] = {1, 2, 4, 3, 6, 7}, in[N] = {2, 4, 1, 6, 7, 3}, l1 = 0, l2 = 0, r1 = N - 1, r2 = N - 1;
-	BiTree<int> root = BiTree<int>(pre, in, l1, r1, l2, r2);
-	root.getInOrder2();
-	return 0;
+	char str1[N], str2[N];
+	int n;
+	scanf("%d", &n);
+	scanf("%s", str1);
+	strCpy(str1, str2, n);
+	printf("%s\n", str2);
 }

@@ -2,28 +2,46 @@
 // Created by 伍高巍 on 2023/2/19.
 //
 
-//编写程序，将字符串中第n个字符开始的全部字符复制成另一个字符串。要求在主函数中输入字符串及n的值并输出复制的结果，在被调用函数中完成复制。
+//有5个学生，每个学生又三门课的成绩，从键盘输入学生数据（包括学生号、姓名、三门课的成绩），计算出平均成绩，将原有数据和计算出的平均分数存放在磁盘文件“stud”中。
 
 #include <cstdio>
+#include <cstdlib>
 
-#define N 100
+#define N 5
 
-void strCpy(char *str1, char *str2, int n)
+struct Stduent
 {
-	int i = n, j = 0;
-	for (; str1[i] != '\0'; i++, j++)
-	{
-		str2[j] = str1[i];
-	}
-	str2[j] = '\0';
-}
+	int no;
+	char name[10];
+	int score1;
+	int score2;
+	int score3;
+	int avg_score;
+};
+
+typedef struct Stduent Student;
 
 int main()
 {
-	char str1[N], str2[N];
-	int n;
-	scanf("%d", &n);
-	scanf("%s", str1);
-	strCpy(str1, str2, n);
-	printf("%s\n", str2);
+	Stduent std[N];
+	FILE *f;
+	f = std::fopen("../2008/stdu.txt", "w+");
+	if (f == NULL)
+	{
+		printf("文件创建失败!\n");
+		exit(0);
+	}
+	for (int i = 0; i < N; ++i)
+	{
+		scanf("%d", &std[i].no);
+		scanf("%s", std[i].name);
+		scanf("%d", &std[i].score1);
+		scanf("%d", &std[i].score2);
+		scanf("%d", &std[i].score3);
+		std[i].avg_score = (std[i].score1 + std[i].score2 + std[i].score3) / 3;
+		fprintf(f, "%d,%s,%d,%d,%d,%d\n", std[i].no, std[i].name, std[i].score1, std[i].score2, std[i].score3,
+				std[i].avg_score);
+	}
+	fclose(f);
+	return 0;
 }

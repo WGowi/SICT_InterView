@@ -1,47 +1,62 @@
 //
-// Created by 伍高巍 on 2023/2/19.
+// Created by 伍高巍 on 2023/2/24.
 //
 
-//有5个学生，每个学生又三门课的成绩，从键盘输入学生数据（包括学生号、姓名、三门课的成绩），计算出平均成绩，将原有数据和计算出的平均分数存放在磁盘文件“stud”中。
+//                3
+//              4   5
+//           8  3  4  9
+//        4  4  2  8   3
+//      1   5   8  8  7  4
+//   8  7  6  2  14  8  9  4
 
 #include <cstdio>
-#include <cstdlib>
 
-#define N 5
-
-struct Stduent
-{
-	int no;
-	char name[10];
-	int score1;
-	int score2;
-	int score3;
-	int avg_score;
-};
-
-typedef struct Stduent Student;
+#define N 10
 
 int main()
 {
-	Stduent std[N];
-	FILE *f;
-	f = std::fopen("../2008/stdu.txt", "w+");
-	if (f == NULL)
+	int triangle[N][N], cost[N][N], n;
+	scanf("%d", &n);
+	for (int i = 0; i < n; ++i)
 	{
-		printf("文件创建失败!\n");
-		exit(0);
+		for (int j = 0; j <= i; ++j)
+		{
+			scanf("%d", &triangle[i][j]);
+		}
 	}
-	for (int i = 0; i < N; ++i)
+	cost[0][0] = triangle[0][0];
+	for (int i = 1; i < n; ++i)
 	{
-		scanf("%d", &std[i].no);
-		scanf("%s", std[i].name);
-		scanf("%d", &std[i].score1);
-		scanf("%d", &std[i].score2);
-		scanf("%d", &std[i].score3);
-		std[i].avg_score = (std[i].score1 + std[i].score2 + std[i].score3) / 3;
-		fprintf(f, "%d,%s,%d,%d,%d,%d\n", std[i].no, std[i].name, std[i].score1, std[i].score2, std[i].score3,
-				std[i].avg_score);
+		for (int j = 0; j <= i; ++j)
+		{
+			if (j == 0)
+			{
+				cost[i][j] = triangle[i][j] + cost[i - 1][j];
+			}
+			else
+			{
+				int max_cost_last;
+				if (cost[i - 1][j] < cost[i - 1][j - 1])
+				{
+					max_cost_last = cost[i - 1][j - 1];
+				}
+				else
+				{
+					max_cost_last = cost[i - 1][j];
+				}
+				cost[i][j] = triangle[i][j] + max_cost_last;
+			}
+		}
 	}
-	fclose(f);
+	int max_cost = cost[n - 1][0], max_i = n - 1, max_j = 0;
+	for (int i = 1; i < n; ++i)
+	{
+		if (max_cost < cost[n - 1][i])
+		{
+			max_cost = cost[n - 1][i];
+			max_j = i;
+		}
+	}
+	printf("max cost:%d\n", max_cost);
 	return 0;
 }
