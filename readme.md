@@ -13,6 +13,6 @@
 
 试卷已经改成markdown格式
 
-[试卷]（./my_answer）
+[试卷](./my_answer)
 
 
