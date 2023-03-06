@@ -13,6 +13,6 @@
 
 试卷已经改成markdown格式
 
-[试卷](./my_answer.md)
-
+[复试试卷](./my_answer.md)
+[初试代码解答](https://github.com/WGowi/UCAS_SYJS_930)
 
