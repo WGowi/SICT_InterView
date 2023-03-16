@@ -14,5 +14,6 @@
 试卷已经全部改成markdown格式
 
 [复试试卷以及解答](./my_answer.md)
+[考频统计](./SICT_INTERVIEW_STATISTIC.xlsx)
 [初试代码解答](https://github.com/WGowi/UCAS_SYJS_930)
 
