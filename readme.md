@@ -19,6 +19,8 @@
 
 [初试930考频统计](./930历年考点归纳.xlsx)
 
+[简历及其自述表讲解](https://www.bilibili.com/video/BV1JT411Z7tg/?share_source=copy_web&vd_source=0fb55813ec220daea391d847badbf9e4)
+
 英语面试：
 
 1、英语自我介绍一分钟（计时）
